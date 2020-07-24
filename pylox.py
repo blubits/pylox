@@ -7,7 +7,7 @@ import interpreter
 import argparse
 import sys
 
-def run_file(filename, iptr, parser):
+def run_file(filename: str, iptr: interpreter.Interpreter, parser: argparse.ArgumentParser):
     """Executes code from a file.
 
     Args:
@@ -24,7 +24,7 @@ def run_file(filename, iptr, parser):
     except FileNotFoundError:
         parser.error("File not found: {0}".format(filename))
 
-def run_prompt(iptr, parser):
+def run_prompt(iptr: interpreter.Interpreter, parser: argparse.ArgumentParser):
     """Creates a prompt (REPL) for executing code.
 
     Args:

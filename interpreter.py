@@ -21,14 +21,14 @@ class Interpreter:
     def __init__(self):
         self.has_error = False
 
-    def run(self, string):
+    def run(self, string: str):
         # Reset error state after every run
         self.has_error = False
         print(string)
 
-    def error(self, line, message):
+    def error(self, line: str, message: str):
         self.report(line, "", message)
 
-    def report(self, line, where, message):
+    def report(self, line: str, where: str, message: str):
         print("[line {0}] Error {1}: {2}".format(
             line, where, message), file=sys.stderr)
