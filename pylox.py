@@ -3,16 +3,16 @@
 :Author:     Maded Batara III
 """
 
-import interpreter
+import lox
 import argparse
 import sys
 
-def run_file(filename: str, iptr: interpreter.Interpreter, parser: argparse.ArgumentParser):
+def run_file(filename: str, iptr: lox.Lox, parser: argparse.ArgumentParser):
     """Executes code from a file.
 
     Args:
         filename (str): Filename of code to execute.
-        iptr (Interpreter): Interpreter to pass code into.
+        iptr (Lox): Interpreter to pass code into.
         parser (ArgumentParser): ArgumentParser of the executable, used to output
             exec-level errors (e.g. file not found).
     """
@@ -24,11 +24,11 @@ def run_file(filename: str, iptr: interpreter.Interpreter, parser: argparse.Argu
     except FileNotFoundError:
         parser.error("File not found: {0}".format(filename))
 
-def run_prompt(iptr: interpreter.Interpreter, parser: argparse.ArgumentParser):
+def run_prompt(iptr: lox.Lox, parser: argparse.ArgumentParser):
     """Creates a prompt (REPL) for executing code.
 
     Args:
-        iptr (Interpreter): Interpreter to pass code into.
+        iptr (lox.Lox): Interpreter to pass code into.
         parser (ArgumentParser): ArgumentParser of the executable, used to output
             exec-level errors (e.g. file not found).
     """
@@ -41,7 +41,7 @@ def run_prompt(iptr: interpreter.Interpreter, parser: argparse.ArgumentParser):
             sys.exit(0)
 
 def main():
-    iptr = interpreter.Interpreter()
+    iptr = lox.Lox()
     # set up cmd arguments
     parser = argparse.ArgumentParser(
         description='The Lox programming language.')

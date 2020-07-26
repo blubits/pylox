@@ -5,7 +5,7 @@
 
 import sys
 
-class Interpreter:
+class Lox:
     """A wrapper class for the Lox interpreter.
 
     The Interpreter class serves as a front-end for the execution of Lox code.
