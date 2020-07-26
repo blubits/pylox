@@ -6,6 +6,7 @@
 from enum import Enum, auto
 
 class TokenType(Enum):
+    """Enum of tokens in the Lox language."""
     # Single-character tokens
     LEFT_PAREN = auto()
     RIGHT_PAREN = auto()
