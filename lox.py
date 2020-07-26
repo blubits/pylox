@@ -32,3 +32,4 @@ class Lox:
     def report(self, line: str, where: str, message: str):
         print("[line {0}] Error {1}: {2}".format(
             line, where, message), file=sys.stderr)
+        self.has_error = True
