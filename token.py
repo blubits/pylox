@@ -17,4 +17,7 @@ class Token:
         self.line = line
 
     def __str__(self):
-        return "[{0}] {1} {2}".format(self.ttype, self.lexeme, self.literal)
+        if self.literal is None:
+            return "<[{0}] {1}>".format(self.ttype, self.lexeme if self.lexeme else "N/A")
+        else:
+            return "<[{0}] {1} {2}>".format(self.ttype, self.lexeme, self.literal)
