@@ -4,6 +4,7 @@
 """
 
 import sys
+import scanner
 
 class Lox:
     """A wrapper class for the Lox interpreter.
@@ -24,7 +25,8 @@ class Lox:
     def run(self, string: str):
         # Reset error state after every run
         self.has_error = False
-        print(string)
+        sc = scanner.Scanner(string, self.error)
+        print(' '.join(str(x) for x in sc.scan_tokens()))
 
     def error(self, line: str, message: str):
         self.report(line, "", message)
